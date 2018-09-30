@@ -4,4 +4,10 @@ class WelcomeController < ApplicationController
 
   def about
   end
+
+  def search
+  end
+
+  def result
+  end
 end
