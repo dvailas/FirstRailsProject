@@ -1,2 +1,19 @@
 <h1>Artists#show</h1>
 <p>Find me in app/views/artists/show.html.erb</p>
+<h2><%= @artist.name %></h3>
+<h4>Genre:<%= @artist.genre.name %></h4>
+<h4>Rating:<%= @artist.popularity %></h4>
+<h5>Top 5 Songs</h5>
+<ul>
+  <% @songs_top_5.each do |song|%>
+    <li>
+      <%= song.name %> Rating: <%= song.rating%>
+    </li>
+  <% end %>
+</ul>
+<h5>Albums</h5>
+<ul>
+  <% @albums.each do |album|%>
+    <li><%= album.name %></li>
+  <% end %>
+</ul>

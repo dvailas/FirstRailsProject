@@ -4,6 +4,9 @@ class ArtistsController < ApplicationController
   end
 
   def show
+    @artist = Artist.find(params[:id])
+    @albums = Album.where(:artist => @artist)
+    @songs_top_5 = Song.where(:artist => @artist).order(:rating).limit(5)
   end
 
   def new
@@ -11,4 +14,9 @@ class ArtistsController < ApplicationController
 
   def edit
   end
+
+  #private
+  #	def artist_params
+  #  		params.require(:artist).permit(:name)
+  #	end
 end

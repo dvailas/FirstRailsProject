@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'artists/new'
   get 'artists/edit'
   get 'welcome/index'
+  resources :artists
+  resources :songs
 
   root 'welcome#index'
 end

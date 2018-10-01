@@ -31,6 +31,7 @@ Genre.delete_all
       begin
         song_name = Faker::Superhero.name + ' ' + Faker::Cannabis.buzzword
        song = Song.new(:name => song_name, :genre => genre, :album => album, :artist => artist, :rating => Faker::Number.number(5),:track_number => i)
+       song.save
         i +=1
       end while i <= num
     end
