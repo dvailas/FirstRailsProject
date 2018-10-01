@@ -14,6 +14,6 @@
 <h5>Albums</h5>
 <ul>
   <% @albums.each do |album|%>
-    <li><%= album.name %></li>
+    <li><%= album.name %> <%= link_to 'Show', album_path(album) %></li>
   <% end %>
 </ul>

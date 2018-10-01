@@ -3,6 +3,6 @@
 
 <ul>
   <% @genres.each do |genre|%>
-    <li><a href="/genre/show"><%= genre.name %> </a></li>
+    <li><%=genre.name%> <%= link_to 'Show', genre_path(genre) %></li>
   <% end %>
 </ul>

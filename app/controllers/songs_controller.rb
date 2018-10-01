@@ -4,6 +4,12 @@ class SongsController < ApplicationController
   end
 
   def show
+    @song = Song.find(params[:id])
+    if(@song.explicit == nil)
+      @explicit = 'N/A'
+    else
+      @explicit = @song.explicit
+    end
   end
 
   def new

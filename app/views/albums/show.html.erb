@@ -1,4 +1,15 @@
 <h1>Albums#show</h1>
 <p>Find me in app/views/albums/show.html.erb</p>
+<h3><%= @album.name%></h3>
+<h4><%= @album.artist.name%></h4>
+<h5>Release Date: <%= @album.releasedate%></h5>
+<h5>Popularity: <%= @album.popularity%></h5><br />
+<h5><%= @album.genre.name%></h5>
+<ul>
+  <% @songs.each do |song|%>
+    <li><%=song.track_number%> <%= song.name %>
+    <%= link_to 'Show', song_path(song) %></li>
+  <% end %>
+</ul>
 
 

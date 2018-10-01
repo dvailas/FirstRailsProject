@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
   end
 
   def search
+    @genres = Genre.all
   end
 
   def result

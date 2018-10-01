@@ -4,6 +4,7 @@ class GenresController < ApplicationController
   end
 
   def show
-
+    @genre = Genre.find(params[:id])
+    @artists = Artist.where(:genre => @genre)
   end
 end

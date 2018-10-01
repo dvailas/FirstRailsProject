@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources :artists
   resources :songs
+  resources :albums
+  resources :genres
 
   root 'welcome#index'
 end

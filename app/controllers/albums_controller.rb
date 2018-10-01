@@ -4,6 +4,8 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    @album = Album.find(params[:id])
+    @songs = Song.where(:album => @album).order(:track_number)
   end
 
   def new
