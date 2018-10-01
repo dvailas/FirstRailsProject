@@ -1,16 +1,12 @@
 <h1>Collection</h1>
-<ul>
   <% @genres.each do |genre|%>
-    <li><%=genre.name%> <%= link_to 'Show', genre_path(genre) %></li>
-    <ul>
+    <h3><%=genre.name%> <%= link_to 'Show', genre_path(genre) %></h3>
     <% @artists.where(:genre => genre).each do |artist|%>
-      <li><%=artist.name%> <%= link_to 'Show', artist_path(artist) %></li>
+      <h5><%=artist.name%> <%= link_to 'Show', artist_path(artist) %></h5>
       <ul>
         <% @albums.where(:artist => artist).each do |album|%>
         <li><%=album.name%> <%= link_to 'Show', album_path(album) %></li>
         <% end %>
       </ul>
     <% end %>
-    </ul>
   <% end %>
-</ul>

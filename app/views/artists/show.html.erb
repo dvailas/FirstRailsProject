@@ -1,6 +1,6 @@
 <h1><%= @artist.name %></h1>
 <% if(@artist.image != nil)%>
-  <img src=<%=@artist.image %> alt="Band Picture" height="80" width="80">
+  <img src="assets/<%=@artist.image %>"" alt="Band Picture" height="80" width="80">
 <%end%>
 <h4>Genre:<%= @artist.genre.name %></h4>
 <h4>Rating:<%= @artist.popularity %></h4>
