@@ -1,27 +1,3 @@
-<header>
-  <div class="topnav">
-    <a class="active" href="/welcome">Home</a>
-    <a href="#">About</a>
-    <a href="/search">Search</a>
-    <a href="/collection">Collection</a>
-  </div>
-
-  <form action="/result" method="get">
-    <label>Search:</label>
-    <input type="text" id="keyword" name="keyword" />
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li>Genre <input type="checkbox" id="genre" name="genre"></li>
-        <li>Artist <input type="checkbox" id="artist" name="artist"></li>
-        <li>Album <input type="checkbox" id="album" name="album"></li>
-        <li>Song <input type="checkbox" id="song" name="song"></li>
-      </ul>
-    </div>
-    <input name="commit" type="submit" value="Search" />
-  </form>
-</header>
 <h1>About</h1>
 <p>I plan on using the Spotify API along with the Faker gem.
 This API contains a lot of things. Songs, artists, genres, are their properties such as their names, release date, discription and more.
@@ -32,3 +8,4 @@ To start I will be using four tables, songs, artists, albums and genres.
  The faker gem goes in hand with the other two datasets becuase it fills the test data which is esstential since these two datasets can have issues with overuse/little volume.
  Tables and columns I would need to create goes as follows in the ERD.
 </p>
+<img src="/assets/IntroToRailsWithBackground.png" alt="ERD Picture" height="400" width="400" />

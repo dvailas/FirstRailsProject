@@ -1,28 +1,7 @@
-<header>
-  <div class="topnav">
-    <a class="active" href="/welcome">Home</a>
-    <a href="/about">About</a>
-    <a href="/search">Search</a>
-    <a href="/collection">Collection</a>
-  </div>
-
-  <form action="/result" method="get">
-    <label>Search:</label>
-    <input type="text" id="keyword" name="keyword" />
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li>Genre <input type="checkbox" id="genre" name="genre"></li>
-        <li>Artist <input type="checkbox" id="artist" name="artist"></li>
-        <li>Album <input type="checkbox" id="album" name="album"></li>
-        <li>Song <input type="checkbox" id="song" name="song"></li>
-      </ul>
-    </div>
-    <input name="commit" type="submit" value="Search" />
-  </form>
-</header>
 <h1><%= @artist.name %></h1>
+<% if(@artist.image != nil)%>
+  <img src=<%=@artist.image %> alt="Band Picture" height="80" width="80">
+<%end%>
 <h4>Genre:<%= @artist.genre.name %></h4>
 <h4>Rating:<%= @artist.popularity %></h4>
 <h5>Top 5 Songs</h5>
@@ -39,3 +18,10 @@
     <li><%= album.name %> <%= link_to 'Show', album_path(album) %></li>
   <% end %>
 </ul>
+<p>href:
+  <% if(@artist.href == nil)%>
+  N/A
+  <%else %>
+  <%=@artist.href%>
+  <%end%>
+</p>

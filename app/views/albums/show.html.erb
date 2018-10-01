@@ -1,39 +1,29 @@
-<header>
-  <div class="topnav">
-    <a class="active" href="/welcome">Home</a>
-    <a href="/about">About</a>
-    <a href="/search">Search</a>
-    <a href="/collection">Collection</a>
-  </div>
-
-  <form action="/result" method="get">
-    <label>Search:</label>
-    <input type="text" id="keyword" name="keyword" />
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li>Genre <input type="checkbox" id="genre" name="genre"></li>
-        <li>Artist <input type="checkbox" id="artist" name="artist"></li>
-        <li>Album <input type="checkbox" id="album" name="album"></li>
-        <li>Song <input type="checkbox" id="song" name="song"></li>
-      </ul>
-    </div>
-    <input name="commit" type="submit" value="Search" />
-  </form>
-</header>
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
-<h3><%= @album.name%></h3>
+<h2><%= @album.name%></h2>
 <h4><%= @album.artist.name%></h4>
+<% if(@album.image != nil)%>
+  <img src=<%=@album.image %> alt="Album Picture" height="80" width="80" >
+<%end%>
 <h5>Release Date: <%= @album.releasedate%></h5>
-<h5>Popularity: <%= @album.popularity%></h5><br />
+<h5>Popularity: <%= @album.popularity%></h5>
 <h5><%= @album.genre.name%></h5>
+<h5>Album Type: <% if(@album.album_type == nil)%>
+  N/A
+  <%else %>
+  <%=@album.album_type%>
+  <%end%>
+</h5>
 <ul>
   <% @songs.each do |song|%>
     <li><%=song.track_number%> <%= song.name %>
     <%= link_to 'Show', song_path(song) %></li>
   <% end %>
 </ul>
+<p>href:
+  <% if(@album.href == nil)%>
+  N/A
+  <%else %>
+  <%=@album.href%>
+  <%end%>
+</p>
 
 
