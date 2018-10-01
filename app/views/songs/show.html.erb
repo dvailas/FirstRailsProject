@@ -1,3 +1,17 @@
+<header>
+  <div class="topnav">
+    <a class="active" href="/welcome">Home</a>
+    <a href="/about">About</a>
+    <a href="/search">Search</a>
+    <a href="/collection">Collection</a>
+  </div>
+
+  <form action="/result" method="get">
+    <label>Search:</label>
+    <input type="text" id="keyword" name="keyword" />
+    <input name="commit" type="submit" value="Search" />
+  </form>
+</header>
 <h1>Songs#show</h1>
 <p>Find me in app/views/songs/show.html.erb</p>
 <h2><%=@song.name%></h2>

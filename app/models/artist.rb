@@ -1,5 +1,5 @@
 class Artist < ApplicationRecord
-  belongs_to :genre
+  has_many :genre
   has_many :songs
   has_many :albums
 

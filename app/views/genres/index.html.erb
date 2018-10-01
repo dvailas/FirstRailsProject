@@ -1,6 +1,18 @@
-<h1>Genres#index</h1>
-<p>Find me in app/views/genres/index.html.erb</p>
+<header>
+  <div class="topnav">
+    <a class="active" href="/welcome">Home</a>
+    <a href="/about">About</a>
+    <a href="/search">Search</a>
+    <a href="/collection">Collection</a>
+  </div>
 
+  <form action="/result" method="get">
+    <label>Search:</label>
+    <input type="text" id="keyword" name="keyword" />
+    <input name="commit" type="submit" value="Search" />
+  </form>
+</header>
+<h1>Genres</h1>
 <ul>
   <% @genres.each do |genre|%>
     <li><%=genre.name%> <%= link_to 'Show', genre_path(genre) %></li>

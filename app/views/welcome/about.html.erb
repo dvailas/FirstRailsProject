@@ -1,6 +1,18 @@
-<h1>Welcome#about</h1>
-<p>Find me in app/views/welcome/about.html.erb</p>
-<h3>About Us</h3>
+<header>
+  <div class="topnav">
+    <a class="active" href="/welcome">Home</a>
+    <a href="#">About</a>
+    <a href="/search">Search</a>
+    <a href="/collection">Collection</a>
+  </div>
+
+  <form action="/result" method="get">
+    <label>Search:</label>
+    <input type="text" id="keyword" name="keyword" />
+    <input name="commit" type="submit" value="Search" />
+  </form>
+</header>
+<h1>About</h1>
 <p>I plan on using the Spotify API along with the Faker gem.
 This API contains a lot of things. Songs, artists, genres, are their properties such as their names, release date, discription and more.
 To start I will be using four tables, songs, artists, albums and genres.
