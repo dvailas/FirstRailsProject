@@ -11,16 +11,16 @@ class WelcomeController < ApplicationController
   def result
     @keyword = params[:keyword] + '%'
 
-    if(!params[:genre] ||!params[:artist] || !params[:album] || !params[:song] )
+    if(!params[:genre] && !params[:artist] && !params[:album] && !params[:song] )
       @genres = Genre.where("name LIKE '" + @keyword + "'")
       @artists = Artist.where("name LIKE '" + @keyword + "'")
       @albums = Album.where("name LIKE '" + @keyword + "'")
       @songs = Song.where("name LIKE '" + @keyword + "'")
     else
-      @genres = nil
-      @artists = nil
-      @albums = nil
-      @songs = nil
+      @genres = Genre.where(:id => 0)
+      @artists = Artist.where(:id => 0)
+      @albums = Album.where(:id => 0)
+      @songs = Song.where(:id => 0)
       if(params[:genre])
         @genres = Genre.where("name LIKE '" + @keyword + "'")
       end
