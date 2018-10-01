@@ -1,0 +1,43 @@
+<header>
+<div class="topnav">
+  <a class="active" href="/welcome">Home</a>
+  <a href="/search">Search</a>
+  <a href="/about">About</a>
+  <a href="/artists/new">Add a Artist</a>
+</div>
+
+<form action="/result" method="post">
+<label>Search:</label>
+<input type="text" id="keyword" name="keyword" />
+<label for="one">
+  <input type="checkbox" id="song" name="song" />Song
+</label>
+<label for="two">
+  <input type="checkbox" id="album" name="album" />Album
+</label>
+<label for="three">
+  <input type="checkbox" id="artist" name="artist" />Artist
+</label>
+<label for="four">
+  <input type="checkbox" id="genre" name="genre" /> Genre
+</label>
+</form>
+</header>
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<ul>
+  <% @genres.each do |genre|%>
+    <li><%=genre.name%> <%= link_to 'Show', genre_path(genre) %></li>
+    <ul>
+    <% @artists.where(:genre => genre).each do |artist|%>
+      <li><%=artist.name%> <%= link_to 'Show', artist_path(artist) %></li>
+      <ul>
+        <% @albums.where(:artist => artist).each do |album|%>
+        <li><%=album.name%> <%= link_to 'Show', album_path(album) %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    </ul>
+  <% end %>
+</ul>

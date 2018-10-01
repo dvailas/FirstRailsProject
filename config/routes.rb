@@ -2,9 +2,9 @@
 Rails.application.routes.draw do
   get 'welcome' => 'welcome#index'
   get 'about' =>'welcome#about'
+  get 'collection' => 'welcome#collection'
   get 'search' =>'welcome#search'
   get 'result' =>'welcome#result'
-  get 'welcome/about'
   get 'songs' => 'songs#index'
   get 'songs/show'
   get 'songs/new'
