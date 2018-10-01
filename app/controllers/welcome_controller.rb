@@ -9,9 +9,11 @@ class WelcomeController < ApplicationController
   end
 
   def result
-    #@result_string = 'name LIKE ' + :q + '%'
-    @keyword = params[:keyword]
-    @genres = Genre.where( :name => params[:keyword])
+    @keyword = params[:keyword] + '%'
+    @genres = Genre.where("name LIKE '" + @keyword + "'")
+    @artists = Artist.where("name LIKE '" + @keyword + "'")
+    @albums = Album.where("name LIKE '" + @keyword + "'")
+    @songs = Song.where("name LIKE '" + @keyword + "'")
   end
 
   def collection
