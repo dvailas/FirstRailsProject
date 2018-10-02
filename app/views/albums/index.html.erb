@@ -1,6 +1,6 @@
 <h1>Albums</h1>
-<ul>
+<ul class="list-group">
   <% @albums.each do |album|%>
-    <li>><%= album.name %><%= link_to 'Show', album_path(album) %></li>
+    <li class="list-group-item list-group-item-success"><%= album.name %><%= link_to 'Show', album_path(album) %></li>
   <% end %>
 </ul>

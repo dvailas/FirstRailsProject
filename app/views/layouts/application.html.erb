@@ -12,16 +12,15 @@
 
   <body>
   <header>
-  <div class="topnav">
-    <a class="active" href="/welcome">Home</a>
-    <a href="/about">About</a>
-    <a href="/search">Search</a>
-    <a href="/collection">Collection</a>
-  </div>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/welcome">Home</a>
+    <a class="navbar-brand" href="/about">About</a>
+    <a class="navbar-brand" href="/search">Search</a>
+    <a class="navbar-brand" href="/collection">Collection</a>
 
-  <form action="/result" method="get">
+  <form class="form-inline" action="/result" method="get">
     <label>Search:</label>
-    <input type="text" id="keyword" name="keyword" />
+    <input class="form-control mr-sm-2" type="text" id="keyword" name="keyword" />
     <div class="dropdown">
       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
       <span class="caret"></span></button>
@@ -31,9 +30,9 @@
         <li>Album <input type="checkbox" id="album" name="album"></li>
         <li>Song <input type="checkbox" id="song" name="song"></li>
       </ul>
-    </div>
-    <input name="commit" type="submit" value="Search" />
+    <input class="btn btn-outline-success my-2 my-sm-0"  name="commit" type="submit" value="Search" />
   </form>
+  </nav>
 </header>
     <%= yield %>
   </body>

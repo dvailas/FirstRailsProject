@@ -1,9 +1,7 @@
 <h1>Artists</h1>
-<p>Find me in app/views/artists/index.html.erb</p>
-
-<ul>
+<ul class="list-group">
   <% @artists.each do |artist|%>
-    <li><%= artist.name %>
+    <li class="list-group-item list-group-item-success"><%= artist.name %>
     <%= link_to 'Show', artist_path(artist) %></li>
   <% end %>
 </ul>
