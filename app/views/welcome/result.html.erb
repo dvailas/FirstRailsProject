@@ -2,36 +2,36 @@
 
 <% if @genres.count != 0%>
 <h2>Genres</h2>
-<ul>
+<ul class="list-group">
   <% @genres.each do |genre|%>
-    <li><%=genre.name%> <%= link_to 'Show', genre_path(genre) %></li>
+    <li class="list-group-item list-group-item-success"><%=genre.name%> <%= link_to 'Show', genre_path(genre) %></li>
     <%end%>
 </ul>
 <%end%>
 
 <% if @artists.count != 0%>
 <h2>Artist</h2>
-<ul>
+<ul class="list-group">
   <% @artists.each do |artist|%>
-    <li><%=artist.name%> <%= link_to 'Show', artist_path(artist) %></li>
+    <li class="list-group-item list-group-item-success"><%=artist.name%> <%= link_to 'Show', artist_path(artist) %></li>
     <%end%>
 </ul>
 <%end%>
 
 <% if @albums.count != 0%>
 <h2>Albums</h2>
-<ul>
+<ul class="list-group">
   <% @albums.each do |album|%>
-    <li><%=album.name%> <%= link_to 'Show', albums_path(album) %></li>
+    <li class="list-group-item list-group-item-success"><%=album.name%> <%= link_to 'Show', albums_path(album) %></li>
     <%end%>
 </ul>
 <%end%>
 
 <% if @songs.count != 0%>
 <h2>Songs</h2>
-<ul>
+<ul class="list-group">
   <% @songs.each do |song|%>
-    <li><%=song.name%> <%= link_to 'Show', genre_path(song) %></li>
+    <li class="list-group-item list-group-item-success"><%=song.name%> <%= link_to 'Show', genre_path(song) %></li>
     <%end%>
 </ul>
 <%end%>
