@@ -21,11 +21,20 @@ html{
 }
 header
 {
-  width:700px;
-  align-content: center;
+  max-width: 900px;
+    margin: auto;
 }
 body
 {
-  width:700px;
-  align-content: center;
+  margin: auto;
+}
+#content
+{
+  max-width: 600px;
+  margin: auto;
+}
+#mainnav
+{
+  position: relative;
+  left:75px;
 }
