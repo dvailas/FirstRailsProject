@@ -12,12 +12,23 @@
   <%=@album.album_type%>
   <%end%>
 </h5>
-<ul class="list-group">
+<table class="table table-striped">
+<thead>
+    <tr>
+      <th scope="col">Track Number</th>
+      <th scope="col">Name</th>
+      <th scope="col">Rating</th>
+    </tr>
+  </thead>
+<tbody>
   <% @songs.each do |song|%>
-    <li class="list-group-item list-group-item-success"><%=song.track_number%> <%= song.name %>
-    <%= link_to 'Show', song_path(song) %></li>
+  <tr>
+    <td><%=song.track_number%></td>
+    <td> <%= song.name %></td>
+    <td><%= link_to 'Show', song_path(song) %></td>
   <% end %>
-</ul>
+</tbody>
+</table>
 <p>href:
   <% if(@album.href == nil)%>
   N/A

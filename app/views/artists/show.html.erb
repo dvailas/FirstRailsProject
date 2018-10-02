@@ -5,19 +5,39 @@
 <h4 class="text-center">Genre:<%= @artist.genre.name %></h4>
 <h4 class="text-center">Rating:<%= @artist.popularity %></h4>
 <h4>Top 5 Songs</h4>
-<ul class="list-group">
+<table class="table table-striped">
+<thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Rating</th>
+    </tr>
+  </thead>
+<tbody>
   <% @songs_top_5.each do |song|%>
-    <li class="list-group-item list-group-item-success">
-      <%= song.name %> Rating: <%= song.rating%>
-    </li>
+  <tr>
+    <td><%= song.name %></td>
+    <td><%= song.rating%></td>
+  </tr>
   <% end %>
-</ul>
+</tbody>
+</table>
 <h4>Albums</h4>
-<ul class="list-group">
+<table class="table table-striped">
+<thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @albums.each do |album|%>
-    <li class="list-group-item list-group-item-success"><%= album.name %> <%= link_to 'Show', album_path(album) %></li>
+  <tr>
+    <td><%= album.name %></td>
+    <td><%= link_to 'Show', album_path(album) %></td>
+</tr>
   <% end %>
-</ul>
+</tbody>
+</table>
 <p>href:
   <% if(@artist.href == nil)%>
   N/A

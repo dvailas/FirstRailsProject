@@ -1,6 +1,19 @@
 <h1>Albums</h1>
-<ul class="list-group">
+<table class="table table-striped">
+<thead>
+    <tr>
+      <th scope="col">Album</th>
+      <th scope="col">Artist</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+<tbody>
   <% @albums.each do |album|%>
-    <li class="list-group-item list-group-item-success"><%= album.name %><%= link_to 'Show', album_path(album) %></li>
+  <tr>
+    <td><%= album.name %></td>
+    <td><%= album.artist.name %></td>
+    <td><%= link_to 'Show', album_path(album) %></td>
+  </tr>
   <% end %>
-</ul>
+  </tbody>
+</table>

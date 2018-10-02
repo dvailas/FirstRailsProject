@@ -1,7 +1,19 @@
 <h1><%=@genre.name%></h1>
-<div class="list-group">
+<table class="table table-striped">
+<thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @artists.each do |artist|%>
-    <li class="list-group-item list-group-item-success"><%= artist.name %>
-    <%= link_to 'Show', artist_path(artist) %></li>
+  <tr>
+    <td><%= artist.name %></td>
+    <td><%= artist.popularity %></td>
+    <td><%= link_to 'Show', artist_path(artist) %></td>
+  </tr>
   <% end %>
-</div>
+  </tbody>
+</table>

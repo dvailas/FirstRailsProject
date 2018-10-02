@@ -2,36 +2,84 @@
 
 <% if @genres.count != 0%>
 <h2>Genres</h2>
-<ul class="list-group">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Genre</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @genres.each do |genre|%>
-    <li class="list-group-item list-group-item-success"><%=genre.name%> <%= link_to 'Show', genre_path(genre) %></li>
-    <%end%>
-</ul>
+  <tr>
+    <td><%=genre.name%></td>
+    <td> <%= link_to 'Show', genre_path(genre) %></td>
+  </tr>
+  <%end%>
+  </tbody>
+</table>
 <%end%>
 
 <% if @artists.count != 0%>
 <h2>Artist</h2>
-<ul class="list-group">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Artist</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @artists.each do |artist|%>
-    <li class="list-group-item list-group-item-success"><%=artist.name%> <%= link_to 'Show', artist_path(artist) %></li>
-    <%end%>
-</ul>
+  <tr>
+    <td ><%=artist.name%></td>
+    <td> <%= link_to 'Show', artist_path(artist) %></td>
+  </tr>
+  <%end%>
+  </tbody>
+</table>
 <%end%>
 
 <% if @albums.count != 0%>
 <h2>Albums</h2>
-<ul class="list-group">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Album</th>
+      <th scope="col">Artist</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @albums.each do |album|%>
-    <li class="list-group-item list-group-item-success"><%=album.name%> <%= link_to 'Show', albums_path(album) %></li>
+  <tr>
+    <td><%=album.name%></td>
+    <td><%=album.artist.name%></td>
+    <td> <%= link_to 'Show', albums_path(album) %></td>
+  </tr>
     <%end%>
-</ul>
+  </tbody>
+</table>
 <%end%>
 
 <% if @songs.count != 0%>
 <h2>Songs</h2>
-<ul class="list-group">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Song</th>
+      <th scope="col">Artist</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @songs.each do |song|%>
-    <li class="list-group-item list-group-item-success"><%=song.name%> <%= link_to 'Show', genre_path(song) %></li>
+    <tr>
+    <td><%=song.name%></td>
+    <td><%=song.artist.name%></td>
+    <td> <%= link_to 'Show', genre_path(song) %></td>
+    </tr>
     <%end%>
-</ul>
+</tbody>
+</table>
 <%end%>
