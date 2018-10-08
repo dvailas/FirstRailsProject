@@ -1,6 +1,6 @@
 <h2 class="text-success text-center"><%=@song.name%></h2>
 <h3 class="lead  text-center"><%=@song.artist.name%></h3>
-<h3 class="lead  text-center"><%@song.album.name%> Track #: <%=@song.track_number%></h3>
+<h3 class="lead  text-center"><%=@song.album.name%> Track #: <%=@song.track_number%></h3>
 <h4 class="lead  text-center">Genre: <%=@song.genre.name%></h4>
 <% if(@song.album.image != nil)%>
   <img src="assets/<%=@song.album.image %>" alt="Band Picture" height="80" width="80">
